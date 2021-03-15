@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maple.demo.mapper.sys.ApproveInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.sys.ApproveInfo">
+        <id column="id" property="id" />
+        <result column="app_temp_id" property="appTempId" />
+        <result column="temp_flow_id" property="tempFlowId" />
+        <result column="ref_id" property="refId" />
+        <result column="version" property="version" />
+        <result column="role_id" property="roleId" />
+        <result column="role_name" property="roleName" />
+        <result column="create_id" property="createId" />
+        <result column="create_name" property="createName" />
+        <result column="create_time" property="createTime" />
+        <result column="approve_id" property="approveId" />
+        <result column="approve_time" property="approveTime" />
+        <result column="approve_status" property="approveStatus" />
+        <result column="approve_name" property="approveName" />
+        <result column="comment" property="comment" />
+        <result column="seq" property="seq" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, app_temp_id, temp_flow_id, ref_id, version, role_id, role_name, create_id, create_name, create_time, approve_id, approve_time, approve_status, approve_name, comment, seq, status
+    </sql>
+
+</mapper>

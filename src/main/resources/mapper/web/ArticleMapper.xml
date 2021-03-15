@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maple.demo.mapper.web.ArticleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.web.Article">
+        <id column="id" property="id" />
+        <result column="channel_id" property="channelId" />
+        <result column="title" property="title" />
+        <result column="subtitle" property="subtitle" />
+        <result column="icon" property="icon" />
+        <result column="content_id" property="contentId" />
+        <result column="summary" property="summary" />
+        <result column="author" property="author" />
+        <result column="publish_date" property="publishDate" />
+        <result column="url" property="url" />
+        <result column="ref_site" property="refSite" />
+        <result column="ref_link" property="refLink" />
+        <result column="state" property="state" />
+        <result column="hot" property="hot" />
+        <result column="type" property="type" />
+        <result column="show_home" property="showHome" />
+        <result column="flag" property="flag" />
+        <result column="submitter" property="submitter" />
+        <result column="submit_name" property="submitName" />
+        <result column="submit_time" property="submitTime" />
+        <result column="auditor" property="auditor" />
+        <result column="audit_name" property="auditName" />
+        <result column="audit_time" property="auditTime" />
+        <result column="is_delete" property="isDelete" />
+        <result column="create_id" property="createId" />
+        <result column="create_name" property="createName" />
+        <result column="create_time" property="createTime" />
+        <result column="update_id" property="updateId" />
+        <result column="update_name" property="updateName" />
+        <result column="update_time" property="updateTime" />
+        <result column="sort_flag" property="sortFlag" />
+        <result column="read_count" property="readCount" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, channel_id, title, subtitle, icon, content_id, summary, author, publish_date, url, ref_site, ref_link, state, hot, type, show_home, flag, submitter, submit_name, submit_time, auditor, audit_name, audit_time, is_delete, create_id, create_name, create_time, update_id, update_name, update_time, sort_flag, read_count
+    </sql>
+
+</mapper>

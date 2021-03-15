@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maple.demo.mapper.sys.MailContentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.sys.MailContent">
+        <id column="ID" property="id" />
+        <result column="TEMP_ID" property="tempId" />
+        <result column="REF_ID" property="refId" />
+        <result column="VERSION" property="version" />
+        <result column="SEND_FROM" property="sendFrom" />
+        <result column="SEND_TO" property="sendTo" />
+        <result column="CC_TO" property="ccTo" />
+        <result column="SUBJECT" property="subject" />
+        <result column="CONTENT" property="content" />
+        <result column="TYPE" property="type" />
+        <result column="CREATED_FROM" property="createdFrom" />
+        <result column="STATUS" property="status" />
+        <result column="UPDATE_ID" property="updateId" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="COMMENT" property="comment" />
+        <result column="ATTACHMENT" property="attachment" />
+        <result column="IS_DELETED" property="isDeleted" />
+        <result column="ENABLED" property="enabled" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, TEMP_ID, REF_ID, VERSION, SEND_FROM, SEND_TO, CC_TO, SUBJECT, CONTENT, TYPE, CREATED_FROM, STATUS, UPDATE_ID, UPDATE_TIME, COMMENT, ATTACHMENT, IS_DELETED, ENABLED
+    </sql>
+
+</mapper>

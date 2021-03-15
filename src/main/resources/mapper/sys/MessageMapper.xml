@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maple.demo.mapper.sys.MessageMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.sys.Message">
+        <id column="id" property="id" />
+        <result column="receiver_id" property="receiverId" />
+        <result column="create_id" property="createId" />
+        <result column="create_name" property="createName" />
+        <result column="create_org_id" property="createOrgId" />
+        <result column="create_org_name" property="createOrgName" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="create_time" property="createTime" />
+        <result column="is_read" property="isRead" />
+        <result column="type" property="type" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, receiver_id, create_id, create_name, create_org_id, create_org_name, title, content, create_time, is_read, type
+    </sql>
+
+</mapper>
