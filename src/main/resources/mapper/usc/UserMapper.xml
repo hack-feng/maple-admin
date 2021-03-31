@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.maple.demo.mapper.usc.UserMapper">
+<mapper namespace="com.maple.base.mapper.usc.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.maple.demo.bean.usc.User">
+    <resultMap id="BaseResultMap" type="com.maple.base.bean.usc.User">
         <id column="id" property="id" />
         <result column="account" property="account" />
         <result column="name" property="name" />
@@ -35,7 +35,7 @@
         id, account, name, nick_name, password, password_date, address, birthday, sex, mobile, email, comment, picture, org_id, join_date, is_system, create_id, update_id, create_time, update_time, create_name, update_name, is_deleted, status
     </sql>
 
-    <select id="getListByPage" resultType="com.maple.demo.bean.usc.User">
+    <select id="getListByPage" resultType="com.maple.base.bean.usc.User">
         select
         *
         from usc_user

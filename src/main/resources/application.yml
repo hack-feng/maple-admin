@@ -3,9 +3,9 @@ server:
 
 spring:
   application:
-    name: ld-edu
+    name: maple-admin
   redis:
-    database: 0
+    database: 2
     host: 192.168.2.21
     port: 6379
     timeout: 5000
@@ -16,10 +16,10 @@ spring:
         max-idle: 16
         min-idle: 8
   datasource:
-    url: jdbc:mysql://192.168.2.21:3306/ld_edu?useUnicode=yes&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/maple?useUnicode=yes&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
-    password: HeGe113344.
+    password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
     # 配置druid数据库连接池---------------------------------------
     initialSize: 5        # 初始化大小，最小，最大

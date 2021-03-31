@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.maple.demo.mapper.sys.MailContentMapper">
+<mapper namespace="com.maple.base.mapper.sys.MailContentMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.maple.demo.bean.sys.MailContent">
+    <resultMap id="BaseResultMap" type="com.maple.base.bean.sys.MailContent">
         <id column="ID" property="id" />
         <result column="TEMP_ID" property="tempId" />
         <result column="REF_ID" property="refId" />

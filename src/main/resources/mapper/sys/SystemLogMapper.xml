@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.maple.demo.mapper.sys.SystemLogMapper">
+<mapper namespace="com.maple.base.mapper.sys.SystemLogMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.maple.demo.bean.sys.SystemLog">
+    <resultMap id="BaseResultMap" type="com.maple.base.bean.sys.SystemLog">
         <id column="id" property="id" />
         <result column="app_name" property="appName" />
         <result column="params" property="params" />

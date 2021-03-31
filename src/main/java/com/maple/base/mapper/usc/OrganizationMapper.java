@@ -1,0 +1,16 @@
+package com.maple.base.mapper.usc;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.maple.base.bean.usc.Organization;
+
+/**
+ * <p>
+ * 用户中心-组织结构表 Mapper 接口
+ * </p>
+ *
+ * @author ZhangFZ
+ * @since 2020-10-13
+ */
+public interface OrganizationMapper extends BaseMapper<Organization> {
+
+}
