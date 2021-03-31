@@ -1,10 +1,10 @@
 package com.maple.base.service.usc;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.IService;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.maple.base.bean.usc.User;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.maple.base.bean.usc.vo.UserMenuVo;
-import org.springframework.data.domain.Page;
 
 /**
  * <p>
@@ -12,13 +12,12 @@ import org.springframework.data.domain.Page;
  * </p>
  *
  * @author ZhangFZ
- * @since 2020-10-13
+ * @since 2021-03-31
  */
 public interface IUserService extends IService<User> {
+    IPage<User> getList(Page<User> page, User user);
+
+    boolean saveOrUpdateData(User user);
 
     UserMenuVo login(String account, String password);
-
-    boolean saveOrUpdateUser(User user);
-
-    IPage<User> getListByPage(Page<User> page, User user);
 }

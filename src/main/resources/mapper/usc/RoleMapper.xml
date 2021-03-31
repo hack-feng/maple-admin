@@ -17,11 +17,13 @@
         <result column="update_id" property="updateId" />
         <result column="update_time" property="updateTime" />
         <result column="update_name" property="updateName" />
+        <result column="sys_type" property="sysType" />
+        <result column="sn" property="sn" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, comment, menu_list, name, status, is_deleted, is_system, create_id, create_time, create_name, update_id, update_time, update_name
+        id, comment, menu_list, name, status, is_deleted, is_system, create_id, create_time, create_name, update_id, update_time, update_name, sys_type, sn
     </sql>
 
 </mapper>

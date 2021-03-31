@@ -1,7 +1,7 @@
 package com.maple.base.mapper.usc;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.maple.base.bean.usc.Role;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>
@@ -9,7 +9,7 @@ import com.maple.base.bean.usc.Role;
  * </p>
  *
  * @author ZhangFZ
- * @since 2020-10-13
+ * @since 2021-03-31
  */
 public interface RoleMapper extends BaseMapper<Role> {
 

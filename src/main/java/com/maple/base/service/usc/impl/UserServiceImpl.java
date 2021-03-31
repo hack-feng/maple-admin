@@ -3,6 +3,7 @@ package com.maple.base.service.usc.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.maple.base.bean.common.GlobalField;
 import com.maple.base.bean.usc.Organization;
@@ -16,7 +17,6 @@ import com.maple.base.service.usc.IUserService;
 import com.maple.base.util.MD5Util;
 import org.apache.tomcat.util.security.MD5Encoder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,7 +27,7 @@ import java.util.List;
  * </p>
  *
  * @author ZhangFZ
- * @since 2020-10-13
+ * @since 2021-03-31
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
@@ -51,14 +51,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if (!MD5Util.verifyPassword(password, user.getPassword(), user.getAccount())) {
             throw new RuntimeException("帐号密码不正确");
         }
-        if (GlobalField.BLOCK_UP.equals(user.getStatus())) {
+        if (GlobalField.BLOCK_UP == user.getStatus()) {
             throw new RuntimeException("您的帐号已被停用，请联系管理员。");
         }
         Organization organization = organizationMapper.selectById(user.getOrgId());
-        if (organization.getType() == 2){
-            if(GlobalField.BLOCK_UP.equals(organization.getStatus())){
-                throw new RuntimeException("您所在的机构已被停用，有疑问请联系管理员。");
-            }
+
+        if(GlobalField.BLOCK_UP == organization.getStatus()){
+            throw new RuntimeException("您所在的机构已被停用，有疑问请联系管理员。");
         }
 
         userMenuVo.setUser(user);
@@ -79,10 +78,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
-    public boolean saveOrUpdateUser(User user) {
+    public boolean saveOrUpdateData(User user) {
         if(user.getId() == null){
             user.setIsSystem(false);
-            user.setStatus("1");
+            user.setStatus(1);
             if (StringUtils.isEmpty(user.getPassword())) {
                 throw new RuntimeException("密码不能为空");
             }
@@ -100,7 +99,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
-    public IPage<User> getListByPage(Page<User> page, User user) {
+    public IPage<User> getList(Page<User> page, User user) {
         return this.baseMapper.getListByPage(page, user);
     }
 }

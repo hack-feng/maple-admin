@@ -6,6 +6,7 @@
     <resultMap id="BaseResultMap" type="com.maple.base.bean.usc.UserRole">
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
+        <result column="sys_type" property="sysType" />
         <result column="role_id" property="roleId" />
         <result column="create_id" property="createId" />
         <result column="create_time" property="createTime" />
@@ -14,7 +15,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_id, role_id, create_id, create_time, create_name
+        id, user_id, sys_type, role_id, create_id, create_time, create_name
     </sql>
 
 </mapper>

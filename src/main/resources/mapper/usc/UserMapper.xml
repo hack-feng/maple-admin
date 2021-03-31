@@ -28,13 +28,15 @@
         <result column="update_name" property="updateName" />
         <result column="is_deleted" property="isDeleted" />
         <result column="status" property="status" />
+        <result column="type" property="type" />
+        <result column="fail_num" property="failNum" />
+        <result column="idcard_number" property="idcardNumber" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, account, name, nick_name, password, password_date, address, birthday, sex, mobile, email, comment, picture, org_id, join_date, is_system, create_id, update_id, create_time, update_time, create_name, update_name, is_deleted, status
+        id, account, name, nick_name, password, password_date, address, birthday, sex, mobile, email, comment, picture, org_id, join_date, is_system, create_id, update_id, create_time, update_time, create_name, update_name, is_deleted, status, type, fail_num, idcard_number
     </sql>
-
     <select id="getListByPage" resultType="com.maple.base.bean.usc.User">
         select
         *

@@ -6,10 +6,13 @@
     <resultMap id="BaseResultMap" type="com.maple.base.bean.usc.Organization">
         <id column="id" property="id" />
         <result column="parent_id" property="parentId" />
+        <result column="sn" property="sn" />
         <result column="name" property="name" />
         <result column="address" property="address" />
+        <result column="email" property="email" />
+        <result column="telephone" property="telephone" />
         <result column="comment" property="comment" />
-        <result column="type" property="type" />
+        <result column="org_type" property="orgType" />
         <result column="is_deleted" property="isDeleted" />
         <result column="create_id" property="createId" />
         <result column="create_name" property="createName" />
@@ -23,7 +26,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, parent_id, name, address, comment, type, is_deleted, create_id, create_name, create_time, update_id, update_name, update_time, status, is_system
+        id, parent_id, sn, name, address, email, telephone, comment, org_type, is_deleted, create_id, create_name, create_time, update_id, update_name, update_time, status, is_system
     </sql>
 
 </mapper>

@@ -24,7 +24,7 @@ open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperNam
 <#else>
 public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
     @Override
-    public IPage<${entity}> getList(Page page, ${entity} ${table.entityPath}) {
+    public IPage<${entity}> getList(Page<${entity}> page, ${entity} ${table.entityPath}) {
         return super.baseMapper.selectPage(page, null);
     }
 

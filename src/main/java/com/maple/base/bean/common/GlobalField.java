@@ -24,8 +24,8 @@ public class GlobalField {
     /**
      * 状态 可用 与 冻结（停用） String 类型
      */
-    public static final String USABLE = "1";
-    public static final String BLOCK_UP = "0";
+    public static final int USABLE = 1;
+    public static final int BLOCK_UP = 0;
 
     /**
      * 系统管理员帐号

@@ -1,7 +1,7 @@
 package ${package.Controller};
 
 
-import com.hege.energy.bean.common.R;
+import com.maple.base.util.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +46,7 @@ public class ${table.controllerName} {
 
     @PostMapping("getList")
     @ApiOperation(value = "分页查询列表", notes="${table.comment!}-分页查询列表", nickname = "${author}")
-    public R getList(Page page, @RequestBody ${entity} ${table.entityPath}){
+    public R getList(Page<${entity}> page, @RequestBody ${entity} ${table.entityPath}){
         return R.ok(${table.entityPath}Service.getList(page, ${table.entityPath}),"查询数据成功");
     }
 

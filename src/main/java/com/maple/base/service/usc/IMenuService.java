@@ -1,10 +1,10 @@
 package com.maple.base.service.usc;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.maple.base.bean.usc.Menu;
-import com.maple.base.bean.usc.vo.MenuTreeVo;
 
-import java.util.List;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.maple.base.bean.usc.Menu;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>
@@ -12,9 +12,10 @@ import java.util.List;
  * </p>
  *
  * @author ZhangFZ
- * @since 2020-10-13
+ * @since 2021-03-31
  */
 public interface IMenuService extends IService<Menu> {
+    IPage<Menu> getList(Page<Menu> page, Menu menu);
 
-    List<MenuTreeVo> getMenuTree();
+    boolean saveOrUpdateData(Menu menu);
 }

@@ -1,9 +1,10 @@
 package com.maple.base.service.usc;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.maple.base.bean.usc.UserRole;
 
-import java.util.List;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.maple.base.bean.usc.UserRole;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>
@@ -11,11 +12,10 @@ import java.util.List;
  * </p>
  *
  * @author ZhangFZ
- * @since 2020-10-13
+ * @since 2021-03-31
  */
 public interface IUserRoleService extends IService<UserRole> {
+    IPage<UserRole> getList(Page<UserRole> page, UserRole userRole);
 
-    void deleteByRoleId(Long roleId);
-
-    void deleteByRoleIdList(List<Long> idList);
+    boolean saveOrUpdateData(UserRole userRole);
 }

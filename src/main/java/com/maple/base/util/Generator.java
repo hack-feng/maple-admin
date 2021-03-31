@@ -41,9 +41,9 @@ public class Generator extends AbstractTemplateEngine {
 
     public static void main(String[] args) {
 
-        String auth = "ZhangFZ";
+        String auth = "Maple";
         String packageName = "com.maple.base";
-        String path = "D:";
+        String path = "/Users/maple/csdn/maple-admin";
         String url = "127.0.0.1:3306/maple";
         String username = "root";
         String password = "123456";

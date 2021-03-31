@@ -1,14 +1,12 @@
 package com.maple.base.service.usc.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.maple.base.bean.usc.UserRole;
 import com.maple.base.mapper.usc.UserRoleMapper;
 import com.maple.base.service.usc.IUserRoleService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 /**
  * <p>
@@ -16,31 +14,22 @@ import java.util.List;
  * </p>
  *
  * @author ZhangFZ
- * @since 2020-10-13
+ * @since 2021-03-31
  */
 @Service
 public class UserRoleServiceImpl extends ServiceImpl<UserRoleMapper, UserRole> implements IUserRoleService {
-
-    /**
-     * 根据roleId 删除角色信息
-     * @param roleId 角色id
-     */
     @Override
-    public void deleteByRoleId(Long roleId) {
-        QueryWrapper<UserRole> qw = new QueryWrapper<>();
-        qw.eq("role_id", roleId);
-        UserRole userRole = new UserRole();
-        userRole.setRoleId(roleId);
-        remove(qw);
-        this.baseMapper.deleteById(roleId);
+    public IPage<UserRole> getList(Page<UserRole> page, UserRole userRole) {
+        return super.baseMapper.selectPage(page, null);
     }
 
-    /**
-     * 根据roleId 集合 批量删除角色信息
-     */
     @Override
-    @Transactional(rollbackFor = Exception.class)
-    public void deleteByRoleIdList(List<Long> idList) {
-        this.baseMapper.deleteBatchIds(idList);
+    public boolean saveOrUpdateData(UserRole userRole) {
+        // 如果数据id存在，则修改数据，否则，插入一条数据
+        if(userRole.getId() != null){
+            return super.baseMapper.updateById(userRole) > 0;
+        }else{
+            return super.baseMapper.insert(userRole) > 0;
+        }
     }
 }

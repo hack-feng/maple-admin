@@ -18,7 +18,7 @@ import ${superServiceClassPackage};
 interface ${table.serviceName} : ${superServiceClass}<${entity}>
 <#else>
 public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
-    IPage<${entity}> getList(Page page, ${entity} ${table.entityPath});
+    IPage<${entity}> getList(Page<${entity}> page, ${entity} ${table.entityPath});
 
     boolean saveOrUpdateData(${entity} ${table.entityPath});
 }

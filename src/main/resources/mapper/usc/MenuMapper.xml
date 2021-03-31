@@ -11,6 +11,7 @@
         <result column="is_tab" property="isTab" />
         <result column="menu_route" property="menuRoute" />
         <result column="url" property="url" />
+        <result column="root_params" property="rootParams" />
         <result column="res_type" property="resType" />
         <result column="icon" property="icon" />
         <result column="is_deleted" property="isDeleted" />
@@ -20,11 +21,13 @@
         <result column="update_id" property="updateId" />
         <result column="update_time" property="updateTime" />
         <result column="update_name" property="updateName" />
+        <result column="sys_type" property="sysType" />
+        <result column="back_url" property="backUrl" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, parent_id, name, serial, is_tab, menu_route, url, res_type, icon, is_deleted, create_id, create_name, create_time, update_id, update_time, update_name
+        id, parent_id, name, serial, is_tab, menu_route, url, root_params, res_type, icon, is_deleted, create_id, create_name, create_time, update_id, update_time, update_name, sys_type, back_url
     </sql>
 
 </mapper>

@@ -8,7 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @SpringBootApplication
-@MapperScan("com.maple.demo.mapper.*")
+@MapperScan("com.maple.base.mapper.*")
 public class MapleDemoApplication {
 
     public static void main(String[] args) {

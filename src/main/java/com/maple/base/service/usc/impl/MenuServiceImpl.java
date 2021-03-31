@@ -1,16 +1,12 @@
 package com.maple.base.service.usc.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.maple.base.bean.usc.Menu;
-import com.maple.base.bean.usc.vo.MenuTreeVo;
 import com.maple.base.mapper.usc.MenuMapper;
 import com.maple.base.service.usc.IMenuService;
-import org.springframework.beans.BeanUtils;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 /**
  * <p>
@@ -18,30 +14,22 @@ import java.util.List;
  * </p>
  *
  * @author ZhangFZ
- * @since 2020-10-13
+ * @since 2021-03-31
  */
 @Service
 public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IMenuService {
-
     @Override
-    public List<MenuTreeVo> getMenuTree() {
-        QueryWrapper<Menu> queryWrapper = new QueryWrapper<>();
-        List<Menu> menuList = this.baseMapper.selectList(queryWrapper);
-        List<MenuTreeVo> resultList = new ArrayList<>();
-        this.buildTree(0L, menuList, resultList);
-        return resultList;
+    public IPage<Menu> getList(Page<Menu> page, Menu menu) {
+        return super.baseMapper.selectPage(page, null);
     }
 
-    private List<MenuTreeVo> buildTree(Long id, List<Menu> list, List<MenuTreeVo> resultList) {
-        for (Menu menu : list) {
-            if (id.equals(menu.getParentId())) {
-                MenuTreeVo tree = new MenuTreeVo();
-                BeanUtils.copyProperties(menu, tree);
-                List<MenuTreeVo> subMenuList = this.buildTree(tree.getId(), list, tree.getChildren());
-                tree.setChildren(subMenuList);
-                resultList.add(tree);
-            }
+    @Override
+    public boolean saveOrUpdateData(Menu menu) {
+        // 如果数据id存在，则修改数据，否则，插入一条数据
+        if(menu.getId() != null){
+            return super.baseMapper.updateById(menu) > 0;
+        }else{
+            return super.baseMapper.insert(menu) > 0;
         }
-        return resultList;
     }
 }
