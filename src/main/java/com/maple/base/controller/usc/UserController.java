@@ -28,7 +28,7 @@ public class UserController {
 
     @PostMapping("getList")
     @ApiOperation(value = "分页查询列表", notes="用户中心-用户信息表-分页查询列表", nickname = "ZhangFZ")
-    public R getList(Page page, @RequestBody User user){
+    public R getList(Page<User> page, @RequestBody User user){
         return R.ok(userService.getList(page, user),"查询数据成功");
     }
 

@@ -101,6 +101,12 @@
             <version>${swagger2-version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+
         <!--shiro依赖-->
         <dependency>
             <groupId>org.slf4j</groupId>

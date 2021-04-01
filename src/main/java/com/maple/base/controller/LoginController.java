@@ -8,6 +8,7 @@ import com.maple.base.service.usc.IUserService;
 import com.maple.base.util.JWTUtil;
 import com.maple.base.util.R;
 import com.maple.base.util.RedisUtil;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ import java.util.Map;
 /**
  * @author Maple
  */
+@Api(tags = "用户登录模块")
 @RestController
 @RequestMapping(value = "/login")
 public class LoginController {
