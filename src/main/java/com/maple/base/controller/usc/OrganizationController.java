@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
- * 用户中心-组织结构表（经销商信息） 前端控制器
+ * 用户中心-组织结构表 前端控制器
  * </p>
  *
  * @author ZhangFZ
  * @since 2021-03-31
  */
-@Api(tags = "{table.comment!}")
+@Api(tags = "用户中心-组织结构表")
 @RestController
 @RequestMapping("/organization")
 public class OrganizationController {

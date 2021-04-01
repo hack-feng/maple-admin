@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
  * @author ZhangFZ
  * @since 2021-03-31
  */
-@Api(tags = "{table.comment!}")
+@Api(tags = "用户中心-用户角色关联表")
 @RestController
 @RequestMapping("/userRole")
 public class UserRoleController {

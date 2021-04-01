@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
  * @author ZhangFZ
  * @since 2021-03-31
  */
-@Api(tags = "{table.comment!}")
+@Api(tags = "用户中心-菜单权限表")
 @RestController
 @RequestMapping("/menu")
 public class MenuController {

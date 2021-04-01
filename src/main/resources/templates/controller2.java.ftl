@@ -25,7 +25,7 @@ import ${superControllerClassPackage};
  * @author ${author}
  * @since ${date}
  */
-@Api(tags = "{table.comment!}")
+@Api(tags = "${table.comment!}")
 <#if restControllerStyle>
 @RestController
 <#else>
