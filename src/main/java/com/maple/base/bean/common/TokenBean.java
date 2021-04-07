@@ -38,10 +38,4 @@ public class TokenBean {
      * 组织机构名称
      */
     private String orgName;
-
-    /**
-     * 是否可见批号和所在地（0：否，1：是）
-     */
-    private Boolean isVisibleLocation;
-
 }

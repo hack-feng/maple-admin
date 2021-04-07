@@ -58,6 +58,7 @@ public class LoginController {
             String token = JWTUtil.createToken(tokenBean);
             redisUtil.remove(GlobalConfig.getRedisUserKey(account));
             redisUtil.set(GlobalConfig.getRedisUserKey(account), token, GlobalConfig.EXPIRE_TIME);
+            System.out.println(JWTUtil.getTokenMsg().toString());
 
             Map<String, Object> resultMap = new HashMap<>(16);
             resultMap.put("token", token);

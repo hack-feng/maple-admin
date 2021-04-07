@@ -208,6 +208,9 @@ public class JWTUtil {
         return JWT.create()
                 .withClaim("userId", tokenBean.getUserId())
                 .withClaim("userName", tokenBean.getUserName())
+                .withClaim("account", tokenBean.getAccount())
+                .withClaim("roleList", tokenBean.getRoleList())
+                .withClaim("orgId", tokenBean.getOrgId())
                 .sign(algorithm);
     }
 }

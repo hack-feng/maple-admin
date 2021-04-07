@@ -43,7 +43,7 @@
         from usc_user
         where
         is_deleted = 0
-        <if test="account != null and account != ''">
+        <if test="user != null and user.account != null and user.account != ''">
             and account like concat('%', #{user.account}, '%')
         </if>
     </select>
