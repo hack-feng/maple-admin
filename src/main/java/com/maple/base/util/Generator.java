@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.builder.ConfigBuilder;
 import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.po.TableFill;
+import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.AbstractTemplateEngine;
@@ -43,7 +44,7 @@ public class Generator extends AbstractTemplateEngine {
 
         String auth = "Maple";
         String packageName = "com.maple.base";
-        String path = "/Users/maple/csdn/maple-admin";
+        String path = "D:";
         String url = "127.0.0.1:3306/maple";
         String username = "root";
         String password = "123456";
@@ -166,8 +167,13 @@ public class Generator extends AbstractTemplateEngine {
                                 .setServiceImpl("templates/serviceImpl2.java")
                 )
                 //开始执行代码生成
-                .setTemplateEngine(new Generator())
+                .setTemplateEngine(new Generator());
+//                .execute();
+
+        new GeneratorVue(dataSourceConfig)
+                .strategy(strategyConfig)
                 .execute();
+
     }
 
     @Override
