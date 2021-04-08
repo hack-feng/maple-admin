@@ -164,11 +164,11 @@ public class GeneratorVue {
             System.out.println(JSONObject.toJSONString(tableInfoList));
             tableInfoList.forEach(tableInfo -> {
                 String filePath = "D:"+ File.separator + "Vue" + File.separator  + tableInfo.getEntityName();
-                String fileComponentsPath = "D:"+ File.separator + "Vue" + File.separator  + tableInfo.getEntityName() + File.separator+  "";
+                String fileComponentsPath = "D:"+ File.separator + "Vue" + File.separator  + tableInfo.getEntityName() + File.separator+ "components";
                 createPath(filePath);
                 createPath(fileComponentsPath);
                 outputIndex(tableInfo, filePath);
-                outputTable(tableInfo, filePath);
+                outputTable(tableInfo, fileComponentsPath);
             });
         } catch (Exception e) {
             throw new RuntimeException("无法创建文件，请检查配置信息！", e);
@@ -198,12 +198,16 @@ public class GeneratorVue {
      */
     private void freeMarkerRender(TableInfo tableInfo, String templateName, String filePath) {
         configuration.setClassForTemplateLoading(this.getClass(), "/templates/generator");
+        String fileName = filePath + File.separator + templateName.replace(".ftl", "");
+        if(!"index.vue.ftl".equals(templateName)){
+            fileName = filePath + File.separator + tableInfo.getEntityName() + templateName.replace(".ftl", "");
+        }
         Writer out = new StringWriter();
         try {
             // 获取模板,并设置编码方式
             Template template = configuration.getTemplate(templateName, "UTF-8");
             // step5 生成数据
-            File docFile = new File(filePath + File.separator + templateName.replace(".ftl", ""));
+            File docFile = new File(fileName);
             out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(docFile)));
             // 合并数据模型与模板
             // 将合并后的数据和模板写入到流中，这里使用的字符流
