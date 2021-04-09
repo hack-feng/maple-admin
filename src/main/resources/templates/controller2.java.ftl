@@ -61,5 +61,11 @@ public class ${table.controllerName} {
     public R getById(long id){
         return R.ok(${table.entityPath}Service.getById(id));
     }
+
+    @PostMapping("deleteById")
+    @ApiOperation(value = "根据id删除数据信息", notes="${table.comment!}-根据id删除数据信息", nickname = "${author}")
+    public R deleteById(long id){
+    return R.ok(${table.entityPath}Service.removeById(id));
+    }
 }
 </#if>

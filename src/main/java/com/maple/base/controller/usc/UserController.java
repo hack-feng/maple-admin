@@ -32,7 +32,7 @@ public class UserController {
         return R.ok(userService.getList(page, user),"查询数据成功");
     }
 
-    @PostMapping("saveOrUpdate")
+    @PutMapping("saveOrUpdate")
     @ApiOperation(value = "新增或修改数据", notes="用户中心-用户信息表-新增或修改数据", nickname = "ZhangFZ")
     public R saveOrUpdateData(@RequestBody User user){
         return R.isOk(userService.saveOrUpdateData(user), "操作");
@@ -42,5 +42,11 @@ public class UserController {
     @ApiOperation(value = "根据id查询数据信息", notes="用户中心-用户信息表-根据id查询数据信息", nickname = "ZhangFZ")
     public R getById(long id){
         return R.ok(userService.getById(id));
+    }
+
+    @PostMapping("deleteById/{id}")
+    @ApiOperation(value = "根据id删除数据信息", notes="用户中心-用户信息表-根据id删除数据信息", nickname = "ZhangFZ")
+    public R deleteById(@PathVariable("id") long id){
+        return R.ok(userService.removeById(id));
     }
 }

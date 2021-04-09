@@ -15,7 +15,6 @@ import com.maple.base.mapper.usc.UserMapper;
 import com.maple.base.mapper.usc.UserRoleMapper;
 import com.maple.base.service.usc.IUserService;
 import com.maple.base.util.MD5Util;
-import org.apache.tomcat.util.security.MD5Encoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -85,11 +84,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             if (StringUtils.isEmpty(user.getPassword())) {
                 throw new RuntimeException("密码不能为空");
             }
-            user.setPassword(MD5Encoder.encode(user.getPassword().getBytes()));
+            user.setPassword(MD5Util.encrypt(user.getPassword(), user.getAccount()));
             return this.baseMapper.insert(user) > 0;
         }else{
             if (StringUtils.isNotEmpty(user.getPassword())) {
-                user.setPassword(MD5Encoder.encode(user.getPassword().getBytes()));
+                user.setPassword(MD5Util.encrypt(user.getPassword(), user.getAccount()));
             } else {
                 user.setPassword(null);
             }
