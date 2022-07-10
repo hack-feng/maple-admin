@@ -15,6 +15,7 @@ spring:
         max-wait: -1
         max-idle: 16
         min-idle: 8
+    password: test001
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/maple?useUnicode=yes&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
     driverClassName: com.mysql.cj.jdbc.Driver

@@ -3,7 +3,7 @@
 <mapper namespace="com.maple.base.mapper.sys.CoreCategoryMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.maple.base.bean.sys.CoreCategory">
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.sys.CoreCategory">
         <id column="id" property="id" />
         <result column="parent_id" property="parentId" />
         <result column="data_type" property="dataType" />

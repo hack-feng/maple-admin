@@ -3,7 +3,7 @@
 <mapper namespace="com.maple.base.mapper.sys.SystemLogMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.maple.base.bean.sys.SystemLog">
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.sys.SystemLog">
         <id column="id" property="id" />
         <result column="app_name" property="appName" />
         <result column="params" property="params" />

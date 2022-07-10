@@ -3,7 +3,7 @@
 <mapper namespace="com.maple.base.mapper.usc.RoleMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.maple.base.bean.usc.Role">
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.usc.Role">
         <id column="id" property="id" />
         <result column="comment" property="comment" />
         <result column="menu_list" property="menuList" />

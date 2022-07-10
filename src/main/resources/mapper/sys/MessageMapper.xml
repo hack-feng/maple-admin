@@ -3,7 +3,7 @@
 <mapper namespace="com.maple.base.mapper.sys.MessageMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.maple.base.bean.sys.Message">
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.sys.Message">
         <id column="id" property="id" />
         <result column="receiver_id" property="receiverId" />
         <result column="create_id" property="createId" />

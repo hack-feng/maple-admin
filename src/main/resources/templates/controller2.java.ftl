@@ -1,7 +1,7 @@
 package ${package.Controller};
 
 
-import com.maple.base.util.R;
+import com.maple.demo.util.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,7 +3,7 @@
 <mapper namespace="com.maple.base.mapper.web.ChannelMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.maple.base.bean.web.Channel">
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.web.Channel">
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="url" property="url" />

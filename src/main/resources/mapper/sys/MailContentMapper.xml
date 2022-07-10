@@ -3,7 +3,7 @@
 <mapper namespace="com.maple.base.mapper.sys.MailContentMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.maple.base.bean.sys.MailContent">
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.sys.MailContent">
         <id column="ID" property="id" />
         <result column="TEMP_ID" property="tempId" />
         <result column="REF_ID" property="refId" />

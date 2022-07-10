@@ -3,7 +3,7 @@
 <mapper namespace="com.maple.base.mapper.usc.OrganizationMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.maple.base.bean.usc.Organization">
+    <resultMap id="BaseResultMap" type="com.maple.demo.bean.usc.Organization">
         <id column="id" property="id" />
         <result column="parent_id" property="parentId" />
         <result column="sn" property="sn" />
